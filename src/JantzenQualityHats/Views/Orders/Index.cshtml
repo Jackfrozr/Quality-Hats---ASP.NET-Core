@@ -1,0 +1,66 @@
+@model IEnumerable<JantzenQualityHats.Models.Order>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Subtotal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GST)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GrandTotal)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subtotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GST)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GrandTotal)
+            </td>
+            <td>
+                <a asp-action="Delete" asp-route-id="@item.OrderID">Delete</a>
+
+            </td>
+            <td>
+                @if (item.OrderStatus == "waiting")
+                {
+                    <a asp-action="EnableDisable" asp-route-id="@item.OrderID">shipped</a>;
+                }
+                else
+                {
+                    <a asp-action="EnableDisable" asp-route-id="@item.OrderID">waiting</a>
+                }
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7B51B611-C682-4D88-A27F-1F0C935B00F4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AFB5AC27-3E47-4A98-939A-DEEBB3B591AC}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "JantzenQualityHats", "src\JantzenQualityHats\JantzenQualityHats.xproj", "{ED001B03-A15F-4763-9BF0-FBB8E6CE5C80}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED001B03-A15F-4763-9BF0-FBB8E6CE5C80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED001B03-A15F-4763-9BF0-FBB8E6CE5C80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED001B03-A15F-4763-9BF0-FBB8E6CE5C80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED001B03-A15F-4763-9BF0-FBB8E6CE5C80}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{ED001B03-A15F-4763-9BF0-FBB8E6CE5C80} = {7B51B611-C682-4D88-A27F-1F0C935B00F4}
+	EndGlobalSection
+EndGlobal

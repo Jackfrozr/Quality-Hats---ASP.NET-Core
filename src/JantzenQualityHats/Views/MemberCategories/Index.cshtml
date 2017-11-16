@@ -1,0 +1,13 @@
+@model IEnumerable<JantzenQualityHats.Models.Category>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Category</h2>
+<br />
+
+@foreach (var item in Model)
+{
+    <h3>@Html.DisplayFor(modelItem => item.Name) <br /><br /></h3>
+}

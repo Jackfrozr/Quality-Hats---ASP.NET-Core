@@ -1,0 +1,73 @@
+@model JantzenQualityHats.Models.Order
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Order</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderStatus)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.OrderStatus)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CustomerID)
+        </dd>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Hat </th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+                @foreach (var item in Model.OrderDetails)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Hat.Name)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Quantity)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Hat.Price)</td>
+                    </tr>
+                }
+                <tr>
+                    <td></td>
+                    <td>
+                        <label>SubTotal:</label><br />
+                        <label>GST(15%):</label><br />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => Model.Subtotal)<br />
+                        @Html.DisplayFor(modelItem => Model.GST) <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <label>GrandTotal:</label>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => Model.GrandTotal)
+                    </td>
+                </tr>
+               
+            </table>
+        </dd>
+
+    </dl>
+    
+    <form asp-action="Delete">
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </form>
+</div>

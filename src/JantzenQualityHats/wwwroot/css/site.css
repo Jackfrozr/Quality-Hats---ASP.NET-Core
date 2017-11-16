@@ -1,0 +1,128 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color:white;
+    color:steelblue;
+}
+
+h2{
+    color:#f7ba00;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/*jumbo*/
+.jumbotron{
+    background-color:steelblue;
+    color: #f7ba00;
+
+}
+
+/*navbar*/
+
+.navbar {
+  background-color: #4682b4;
+}
+.navbar .navbar-brand {
+  color: #f7ba00;
+}
+.navbar .navbar-brand:hover,
+.navbar .navbar-brand:focus {
+  color: deepskyblue;
+}
+/*-----------*/
+.navbar .navbar-text {
+  color: deepskyblue;
+}
+.navbar .navbar-nav > li > a {
+  color: deepskyblue;
+}
+.navbar .navbar-nav > li > a:hover,
+.navbar .navbar-nav > li > a:focus {
+  color: #f7ba00 !important;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #f7ba00 !important;
+  background-color: #166f9f;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #f7ba00;
+  background-color: #166f9f;
+}
+.navbar-default .navbar-toggle {
+  border-color: #166f9f;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #166f9f;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: deepskyblue;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #29a6c5;
+}
+.navbar-default .navbar-link {
+  color: #f7ba00;
+}
+.navbar-default .navbar-link:hover {
+  color: deepskyblue;
+}
+/*======================================*/
+
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* buttons and links extension to use brackets: [ click me ] */
+.btn-bracketed::before {
+    display:inline-block;
+    content: "[";
+    padding-right: 0.5em;
+}
+.btn-bracketed::after {
+    display:inline-block;
+    content: "]";
+    padding-left: 0.5em;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"]
+{
+    width: 100%;
+}
+
+
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+  /* Hide captions */
+  .carousel-caption {
+    display: none
+  }
+}
+
+container2 {
+    background-color:dodgerblue;
+    color:beige;
+}

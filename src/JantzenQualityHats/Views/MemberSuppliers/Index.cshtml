@@ -1,0 +1,19 @@
+@model IEnumerable<JantzenQualityHats.Models.Supplier>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Our Brands</h2><br />
+
+@foreach (var item in Model)
+{
+
+    <b>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(modelItem => item.Name)</b>
+
+    <p>@Html.DisplayNameFor(model => model.EmailAddress): @Html.DisplayFor(modelItem => item.EmailAddress)
+    </p>
+
+
+}
+<br />

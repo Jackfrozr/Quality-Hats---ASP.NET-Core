@@ -1,0 +1,77 @@
+@model JantzenQualityHats.Models.ShoppingCartViewModels.ShoppingCartViewModel
+
+@{
+    ViewData["Title"] = "Default";
+}
+
+
+<h2><span>Shopping Cart</span></h2>
+<div class="container" style="background-color:white; color:orange; border-radius: 15px; padding:40px">
+    <div class="row" style="background-color:steelblue">
+        <div class="col-sm-4">
+            <h4 class="display-4">Image</h4>
+        </div>
+        <div class="col-sm-3">
+            <h4 class="display-4">Name</h4>
+        </div>
+        <div class="col-sm-2">
+            <h4 class="display-4">Quantity</h4>
+        </div>
+        <div class="col-sm-3">
+            <h4 class="display-4">Price</h4>
+        </div>
+    </div>
+
+    @foreach (var item in Model.CartItems)
+    {
+        var imgUrl = @Href("~" + item.Hat.Image);
+        var errImg = @Href("~/images/error.jpg");
+        <div class="row" style="background-color:white; padding-top:5px;border-style: solid;border-width: 1px; border-top: none;">
+            <div class="col-sm-4">
+                <img style="width: 250px; height: auto;" src="@imgUrl" alt="Hat Image" onerror="this.onerror = null; this.src = '@errImg'">
+            </div>
+
+            <div class="col-sm-3"><a asp-action="Details" asp-route-id="@item.Hat.HatID">@item.Hat.Name</a> </div>
+
+            <div class="col-sm-2">@item.Count         <a asp-action="RemoveFromCart" asp-controller="ShoppingCart" asp-route-id="@item.Hat.HatID"><span class="glyphicon glyphicon-remove-circle"></span></a></div>
+
+            <div class="col-sm-3">$@item.Hat.Price</div>
+        </div>
+    }
+    <br />
+
+    <div class="row" style="font-weight: bold;">
+        <div class="col-sm-8"></div>
+        <div class="col-sm-2">
+            SubTotal:<br />
+            Gst:<br />
+            GrandTotal:
+        </div>
+        <div class="col-sm-2">
+            $@Model.CartTotal<br />
+            $@Model.Gst<br />
+            $@Model.GrandTotal
+        </div>
+    </div>
+
+    <hr />
+    @if (@Model.CartItems.Count > 0)
+    {
+
+        <div class="row">
+            <div class="col-sm-offset-8 col-sm-2">
+                <a asp-action="EmptyCart" asp-controller="ShoppingCart">
+                    Clear <span class="glyphicon glyphicon-remove"></span>
+                </a>
+            </div>
+                <div class="col-sm-2">
+                    <a asp-action="Create" asp-controller="Orders">
+                        Proceed To Checkout <span class="glyphicon glyphicon-step-forward"></span>
+                    </a>
+                </div>
+            </div>
+
+    }
+
+
+</div>
